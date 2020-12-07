@@ -1,0 +1,63 @@
+.button {
+  display: block;
+  background-color: black;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+button {
+  margin: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  outline: none;
+  border: none;
+  font-size: 25px;
+  color: white;
+}
+
+.zero-btn {
+  width: 160px;
+  background-color: #525252;
+}
+
+.btn-color__darkgrey {
+  background-color: #525252;
+}
+
+.btn-color__orange {
+  background-color: #ff7600;
+}
+
+.btn-color__grey {
+  background-color: #bbb3b3;
+  color: black;
+}
+
+.darkOrange {
+  background-color: darkorange;
+}
+
+@media (max-width: 400px) {
+  .button {
+    width: 400px;
+  }
+
+  button {
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 490px) {
+  .button {
+    width: 450px;
+  }
+
+  .zero-btn {
+    width: 180px;
+  }
+}

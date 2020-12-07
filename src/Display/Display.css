@@ -1,0 +1,28 @@
+.display__screen {
+  margin: 0 auto;
+  height: 150px;
+  background-color: black;
+  color: white;
+}
+
+.display__screen p {
+  padding: 20px;
+  margin: 0;
+  position: relative;
+  float: right;
+  top: 30px;
+  right: 25px;
+  font-size: 60px;
+}
+
+@media (max-width: 400px) {
+  .display__screen {
+    width: 400px;
+  }
+}
+
+@media (min-width: 490px) {
+  .display__screen {
+    width: 450px;
+  }
+}
