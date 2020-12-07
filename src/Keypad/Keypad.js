@@ -4,129 +4,137 @@ import './Keypad.css';
 
 const keypad = (props) => {
 
-    let clickFunction;
-    if(props.numberLength > 0 || props.numberLength <= 13){
-        clickFunction = props.clickButton
+    let clickNumbers;
+    let clickOperators;
+    if(props.numberLength < 9){
+        clickNumbers = props.clickButton;
+    }
+    
+    clickOperators = props.clickButton;
+
+    let btnName = "AC";
+    if(props.clearable){
+        btnName = "C";
     }
 
     return(
         <div className="button">
             <button 
                 className="btn-color__grey"
-                name="AC"
-                onClick= {clickFunction}
-            >AC
+                name= {btnName}
+                onClick= {clickOperators}
+            > {btnName}
             </button>
             <button 
                 className="btn-color__grey"
                 name="+/-"
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >+/-
             </button>
             <button 
                 className="btn-color__grey"
                 name="%"
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >%
             </button>
             <button 
                 className="btn-color__orange"
                 name="/"
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >÷
             </button>
 
             <button 
                 className="btn-color__darkgrey"
                 name = "7"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >7
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="8"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >8
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="9"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >9
             </button>
             <button 
                 className="btn-color__orange"
                 name="*"
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >X
             </button>
 
             <button 
                 className="btn-color__darkgrey"
                 name="4"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >4
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="5"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >5
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="6"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >6
             </button>
             <button 
                 className="btn-color__orange"
                 name="-"
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >-
             </button>
 
             <button 
                 className="btn-color__darkgrey"
                 name="1"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >1
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="2"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >2
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="3"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >3
             </button>
             <button 
                 className="btn-color__orange"
                 name="+"
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >+
             </button>
 
             <button 
                 className="zero-btn"
                 name="0"
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >0
             </button>
             <button 
                 className="btn-color__darkgrey"
                 name="."
-                onClick= {clickFunction}
+                onClick= {clickNumbers}
             >.
             </button>
             <button 
                 className="btn-color__orange"
                 name="="
-                onClick= {clickFunction}
+                onClick= {clickOperators}
             >=
             </button>
         </div>

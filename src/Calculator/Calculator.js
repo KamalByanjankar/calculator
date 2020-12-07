@@ -7,10 +7,15 @@ import Keypad from '../Keypad/Keypad';
 class result extends Component {
     state = { 
         number: "",
+        calculation: new Calculation(),
     }
 
     buttonClickHandler = (event) => {
-       console.log("Button clicked")
+        let input = event.target.name
+        console.log(input)
+        this.setState({
+            number: this.state.calculation.calculate(input)
+        })
     }
     
     render() { 
@@ -22,6 +27,7 @@ class result extends Component {
                 <Keypad 
                     clickButton={(event) => this.buttonClickHandler(event)} 
                     numberLength= {this.state.number.length}
+                    clearable = {this.state.calculation.clearable}
                 />
             </div>
          );
