@@ -53,8 +53,7 @@ class Calculation{
             return this.number;
         }
 
-        if(input === "." && this.number === ""){
-            this.number = "0.";
+        if(input === "." && this.number !== ""){
             return this.number;
         }
 
@@ -91,6 +90,14 @@ class Calculation{
 
         if(input === this.operationEnums.changeSign){
             return this.handleSignChangeOperation();
+        }
+
+        if(input === this.operationEnums.clear){
+            return this.handleClearOperation();
+        }
+
+        if(input === this.operationEnums.allClear){
+            return this.handleAllClearOperation();
         }
     }
 
@@ -183,6 +190,25 @@ class Calculation{
 
     change(number){
         return (parseFloat(number) * -1).toString();
+    }
+
+    handleClearOperation(){
+        this.number = ""
+        this.clearable = false;
+
+        return "0";
+    }
+
+    handleAllClearOperation(){
+        this.number = "";
+        this.previousInput = null;
+        this.previousNumber = null;
+        this.repeatNumber = null;
+        this.previousOperation = null;
+        this.repeatOperation = null;
+        this.clearable = false;
+
+        return "0";
     }
 }
 
