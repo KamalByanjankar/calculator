@@ -54,6 +54,7 @@ class Calculation{
         }
 
         if(input === "." && this.number !== ""){
+            this.number += ".";
             return this.number;
         }
 
