@@ -155,7 +155,14 @@ class Calculation{
     }
 
     substract(previousNumber, number){
-        return (parseFloat(previousNumber) - parseFloat(number)).toString();
+        if(this.containsDecimalPoint(previousNumber) || this.containsDecimalPoint(number)){
+            return (parseFloat(previousNumber) - parseFloat(number)).toFixed(2).toString();
+        }
+
+        else{
+            return (parseFloat(previousNumber) - parseFloat(number)).toString();
+        }
+        
     }
 
     multiply(previousNumber, number){
