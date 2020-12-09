@@ -100,6 +100,10 @@ class Calculation{
         if(input === this.operationEnums.allClear){
             return this.handleAllClearOperation();
         }
+
+        if(input === this.operationEnums.equal){
+            return this.handleEqualOperation(input);
+        }
     }
 
     updatePreviousState(number, input){
@@ -151,18 +155,11 @@ class Calculation{
     }
 
     add(previousNumber, number){
-        return (parseFloat(previousNumber) + parseFloat(number)).toString();
+        return (parseFloat(previousNumber) + parseFloat(number)).toString();  
     }
 
     substract(previousNumber, number){
-        if(this.containsDecimalPoint(previousNumber) || this.containsDecimalPoint(number)){
-            return (parseFloat(previousNumber) - parseFloat(number)).toFixed(2).toString();
-        }
-
-        else{
-            return (parseFloat(previousNumber) - parseFloat(number)).toString();
-        }
-        
+        return (parseFloat(previousNumber) - parseFloat(number)).toString();   
     }
 
     multiply(previousNumber, number){
@@ -217,6 +214,66 @@ class Calculation{
         this.clearable = false;
 
         return "0";
+    }
+
+    handleEqualOperation(input){
+        if(this.previousNumber === null){
+            this.updatePreviousState(this.number, input);
+
+            return this.number;
+        }
+        else{
+            this.previousInput = input;
+
+            if(this.previousOperation !== this.operationEnums.equal && input === this.operationEnums.equal){
+                let temp = this.number;
+    
+                if(this.previousOperation === this.operationEnums.addition){
+                    this.number = this.add(this.previousNumber, temp);
+                }
+    
+                if(this.previousOperation === this.operationEnums.substraction){
+                    this.number = this.substract(this.previousNumber, temp);
+                }
+    
+                if(this.previousOperation === this.operationEnums.multiplication){
+                    this.number = this.multiply(this.previousNumber, temp);
+                }
+    
+                if(this.previousOperation === this.operationEnums.division){
+                    this.number = this.divide(this.previousNumber, temp);
+                }
+    
+                this.repeatNumber = temp;
+                this.repeatOperation = this.previousOperation;
+                this.previousInput = input;
+                this.previousOperation = input;
+    
+                return this.number;
+            }
+
+            else{
+                let temp = this.number;
+
+                if(this.repeatNumber !== null){
+                    if(this.repeatOperation === this.operationEnums.addition){
+                        this.number = this.add(temp, this.repeatNumber);
+                    }
+                    if(this.repeatOperation === this.operationEnums.substraction){
+                        this.number = this.substract(temp, this.repeatNumber);
+                    }
+                    if(this.repeatOperation === this.operationEnums.division){
+                        this.number = this.divide(temp, this.repeatNumber);
+                    }
+                    if(this.repeatOperation === this.operationEnums.multiplication){
+                        this.number = this.multiply(temp, this.repeatNumber);
+                    }
+                }
+
+                this.updatePreviousState(temp, input);
+                return this.number;
+            }
+        }
     }
 }
 
