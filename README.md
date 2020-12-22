@@ -6,7 +6,7 @@ You can find the working application under: https://react-ios-calculator.herokua
 
 The calculator is as shown below:
 
-<img src="./src/assets/images/calculator.png"/>
+<img src="./src/assets/images/calculator.png" width="250px" height="350px"/>
 
 ## Available Scripts
 
