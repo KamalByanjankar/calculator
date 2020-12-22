@@ -2,3 +2,10 @@
   text-align: center;
   margin-top: 30px;
 }
+
+@media (max-width: 400px) {
+  .App {
+    margin: 0;
+    padding: 0;
+  }
+}
