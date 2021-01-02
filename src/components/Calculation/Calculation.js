@@ -192,9 +192,7 @@ class Calculation{
         if(this.number === ""){
             this.number = "0";
         }
-
         this.number = this.change(this.number);
-
         return this.number;
     }
 
@@ -203,10 +201,10 @@ class Calculation{
     }
 
     handleClearOperation(){
-        this.number = ""
+        this.number = "0"
         this.clearable = false;
 
-        return "0";
+        return this.number
     }
 
     handleAllClearOperation(){

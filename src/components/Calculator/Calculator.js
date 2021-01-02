@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Calculation from '../Calculation';
+import Calculation from '../Calculation/Calculation';
 import Display from '../Display/Display';
 import Keypad from '../Keypad/Keypad';
 
