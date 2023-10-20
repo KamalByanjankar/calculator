@@ -22,12 +22,6 @@
     "shell-quote": "1.8.1",
     "web-vitals": "^0.2.4"
   },
-  "devDependencies": {
-    "loader-utils": "3.2.1"
-  },
-  "overrides": {
-    "loader-utils": "$loader-utils"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
