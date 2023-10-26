@@ -2,8 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can find the working application under: https://react-ios-calculator.herokuapp.com/
-
 The calculator is as shown below:
 
 <img src="./src/assets/images/calculator.png" width="250px" height="350px"/>
